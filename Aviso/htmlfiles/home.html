@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - E-Store{% endblock %}
+
+{% block content %}
+  {% if category %}
+    <div class="text-center py-5" style="background-color: #f8f9fa; color: #333;">
+      <h1 class="display-4">{{category.name}}</h1>
+      <p>{{category.desc}}</p>
+      <img src="{{category.image.url}}" class="img-fluid rounded" style="width: 1700px; height: 700px;" alt="{{category.name}} Image">
+    </div>
+  {% else %}
+    <div class="text-center py-5" style="background-color: #f8f9fa; color: #333;">
+      <img src="{% static 'Images/Designer.png' %}" alt="Wallpaper Image" class="img-fluid rounded shadow-lg mb-4" style="max-width: 100%; height: auto;">
+      <h1 class="display-4" style="color: #007bff;">Welcome to <span style="color: #e44d26;">E-Store</span>!</h1>
+      <p class="lead">Discover a world of amazing products at E-Store. We bring you the latest trends in fashion, electronics, home decor, and more. Shop with confidence and convenience, right from the comfort of your home.</p>
+      <hr class="my-4" style="border-color: #007bff;">
+      <p>Explore our diverse collection, find great deals, and experience seamless shopping. Whether you're looking for stylish clothing, cutting-edge gadgets, or unique home essentials, E-Store has it all!</p>
+      <p>From trendy apparel to cutting-edge electronics, we curate the best products for our customers. Our commitment to quality and customer satisfaction sets us apart.</p>
+      <p>Join our community of satisfied customers and elevate your shopping experience. Start browsing now and make your online shopping journey memorable at E-Store.</p>
+    </div>
+  {% endif %}
+  
+  <div class="container">
+    {% block product_section %}
+        <div class="row justify-content-center">
+            {% for prod in products %}
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="card border shadow" style="width: 18rem;">
+                        <a href="{% url 'product_detail' prod.category.slug prod.slug %}">
+                            <img src="{{prod.image.url}}" class="card-img-top rounded" style="width:100%; height:200px; object-fit: cover;" alt="Product Image">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{prod.name}}</h5>
+                            <p class="card-text">{{prod.price}}</p>
+                            <a href="{% url 'cart' prod.id %}" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endblock %}
+  </div>
+
+{% endblock %}

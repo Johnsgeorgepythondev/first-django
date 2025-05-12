@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<br>
+<h1> Specially Curated Books, Just for You</h1>
+<hr>
+<br>
+<div class="row">
+    {% for books in books %}
+        <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ books.image }}" alt="Card image cap" style="height:18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ books.name }}</h5>
+                    <p class="card-text">$ {{ books.price }}</p>
+                    <a href="{% url 'cart' %}" class="btn btn-primary">Add to wishlist</a>
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}

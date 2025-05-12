@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Student Registration</h1>
+  <form method="post">
+    {% csrf_token %}  # Include security token
+    {{ form.as_p }}  # Render form fields using as_p
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>

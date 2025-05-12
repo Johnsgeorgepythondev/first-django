@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Tag</title>
+</head>
+<body>
+<h1> To find the number Even or Odd</h1>
+<h1>Given number is: {{num}}</h1>
+{% if num|divisibleby:2 %}
+<h2> The number is Even</h2>
+{% else %}
+<h2>the number is Odd</h2>
+{% endif %}
+
+</body>
+</html>

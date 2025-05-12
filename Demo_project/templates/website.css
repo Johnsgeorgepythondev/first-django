@@ -1,0 +1,83 @@
+h1 {
+    background-color:green;
+    font-size : 40px;
+    }
+h2 {
+    font-size : 40px;
+    color: #13b4cd;
+   }
+img {
+     display: inline-block}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image:url("./World-Environment-Day-History.png");background-size:cover;}
+}
+p {
+  background-color:rgb(4, 218, 86);
+
+}
+
+header {
+  background-color: #58ea14;
+  color: rgb(123, 18, 188);
+  text-align: center;
+  padding: 1em;
+  font-size : 25px;
+
+}
+
+nav {
+  background-color: #e6a10c;
+  padding: 0.5em;
+}
+
+nav ul {
+  list-style: none;
+  background-color:light green;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav li {
+  display: inline;
+  font-size:30px
+}
+
+nav a {
+  text-decoration: none;
+  color: #d31399;
+  padding: 0.5em;
+}
+
+main {
+  padding: 2em;
+
+}
+
+section {
+  border: 3px solid black;
+  padding: 1em;
+  margin-bottom: 1em;
+  img {
+  display: block; /* Remove any default inline display */
+  margin: auto; /* Center the image horizontally */
+}
+
+}
+
+footer {
+  background-color: #d2df103b;
+  color: rgb(197, 25, 194);
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: auto; /* Center the image horizontally */
+}
